@@ -31,7 +31,7 @@ export default class Page3 extends Component<Props> {
         <Text style={styles.welcome}>{showText}</Text>
 
         <TextInput
-          onChangeText={text => {
+          onChangeText={(text) => {
             setParams({ title: text });
           }}
         />

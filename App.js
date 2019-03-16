@@ -8,18 +8,23 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,Image} from 'react-native';
+import {Platform, StyleSheet, Text, View,Image,ListView} from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
+import Boy from './Boy';
+import FetchTest from './FetchTest';
 
 
 type Props = {};
 export default class App extends Component<Props> {
   constructor(props){
     super(props);
+    
     this.state = {
       selectedTab:'tb_popular',
+      
     };
   }
+
   render() {
     return (
       <View  style={styles.container}>
@@ -32,7 +37,7 @@ export default class App extends Component<Props> {
             renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'red'}]} source={require('./res/images/ic_polular.png')} />}
             badgeText="1"
             onPress={() => this.setState({ selectedTab: 'tb_popular' })}>
-            <View style={styles.page1} ></View>
+            <FetchTest></FetchTest>
           </TabNavigator.Item>
           <TabNavigator.Item
             selected={this.state.selectedTab === 'tb_trending'}
@@ -61,10 +66,21 @@ export default class App extends Component<Props> {
             onPress={() => this.setState({ selectedTab: 'tb_my' })}>
             <View style={styles.page2} ></View>
           </TabNavigator.Item>
-        </TabNavigator>
+        </TabNavigator> 
+        {/* <Navigator 
+          initialRoute={{
+            component : Boy
+          }}
+          renderScene={(route,navigator)=>{
+            let Component = route.component;
+            return <Component navigator={navigator} {...route.params}/>
+          }}
+        ></Navigator> */}
+        
       </View>
     );
   }
+
 }
 
 const styles = StyleSheet.create({

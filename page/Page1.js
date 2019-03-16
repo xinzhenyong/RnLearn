@@ -33,19 +33,20 @@ export default class Page1 extends Component<Props> {
           onPress={()=>{
             navigation.navigate('Page4');
           }}/>
+          <Text>{navigation.state.params.name}</Text>
       </View>
     );
   }
+  
 }
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-    flexWrap:'wrap',
-    flexDirection:'row',
+    flexDirection:'column',
   },
   welcome: {
     flex:1,
