@@ -9,13 +9,13 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import App from './App';
+import MainPage from './MainPage';
 import { NavigationActions, StackActions } from 'react-navigation';
 
 export default class Welcome extends Component{
   componentDidMount(){
       this.timer=setTimeout(()=>{
-        this.goToPage('App');
+        this.goToPage('MainPage');
         // this.props.navigator.resetTo({
         //   component:App
         // })

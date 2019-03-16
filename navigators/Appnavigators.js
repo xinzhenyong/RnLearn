@@ -8,7 +8,7 @@ import Page3 from '../page/Page3';
 import Page4 from '../page/Page4';
 import Page5 from '../page/Page5';
 import Welcome from '../Welcome';
-import App from '../App';
+import MainPage from '../MainPage';
 // export const AppStackNavigator=createStackNavigator({
 //     HomePage:{
 //         screen:HomePage
@@ -35,7 +35,7 @@ import App from '../App';
 //                 title: params.title?params.title:'This is Page3',
 //                 headerRight:(
 //                     <Button 
-//                         title={params.mode === 'edit'?'保存':'编辑'}
+//                         title={params.mode === 'edit'?'ä¿�å­˜':'ç¼–è¾‘'}
 //                         onPress={()=>setParams({mode:params.mode==='edit'?'':'edit'})}
 //                     />
 //                 )
@@ -47,8 +47,10 @@ export const AppStackNavigator=createStackNavigator({
     Welcome:{
         screen:Welcome
     },
-    App:{
-        screen:App
+    MainPage:{
+        screen:MainPage,
+                navigationOptions:{title:'热门'}
+            
     },
     
 })

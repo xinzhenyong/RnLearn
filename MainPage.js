@@ -11,11 +11,11 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,Image,ListView} from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 import Boy from './Boy';
-import FetchTest from './FetchTest';
+import PopularPage from './PopularPage';
 
 
 type Props = {};
-export default class App extends Component<Props> {
+export default class MainPage extends Component<Props> {
   constructor(props){
     super(props);
     
@@ -24,7 +24,7 @@ export default class App extends Component<Props> {
       
     };
   }
-
+  
   render() {
     return (
       <View  style={styles.container}>
@@ -37,7 +37,7 @@ export default class App extends Component<Props> {
             renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'red'}]} source={require('./res/images/ic_polular.png')} />}
             badgeText="1"
             onPress={() => this.setState({ selectedTab: 'tb_popular' })}>
-            <FetchTest></FetchTest>
+            <PopularPage></PopularPage>
           </TabNavigator.Item>
           <TabNavigator.Item
             selected={this.state.selectedTab === 'tb_trending'}

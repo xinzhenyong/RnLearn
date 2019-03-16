@@ -9,13 +9,20 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,ListView} from 'react-native';
+import ScrollableTabBarView, {ScrollableTabBar} from 'react-native-scrollable-tab-view';
 
-export default class FetchTest extends Component{
+const URL = 'https://api.github.com/search/repositories?q=';
+const QUERY_STR = '&sort=stars';
+export default class PopularPage extends Component{
   constructor(props){
     super(props);
     this.state={
-      result:"",
+      result:'',
+      tabLabel:'ios'
     }
+  }
+  componentDidMount(){
+    this.onLoad();
   }
   renderRow(item){
     return <View>
@@ -23,7 +30,9 @@ export default class FetchTest extends Component{
       <Text>{item.fullName}</Text>
     </View>
   }
-  onLoad(url){
+  onLoad(){
+    let url = URL + this.state.tabLabel+QUERY_STR;
+    // let url = "http://www.baidu.com";
     fetch(url)
     .then(response=>response.json())
     .then(result=>{
@@ -39,12 +48,12 @@ export default class FetchTest extends Component{
   }
   render(){
     return <View style={{flex:1,backgroundColor:'red',justifyContent:'center'}}>
-      <Text
-        onPress={()=>{
-          this.onLoad("http://www.baidu.com")
-        }}
-      >get data</Text>
-      <Text>result:{this.state.result}</Text>
+      <ScrollableTabBarView renderTabBar={()=><ScrollableTabBar/>}>
+        <Text tabLabel="ios">ios</Text>
+        <Text tabLabel="java">java</Text>
+        <Text tabLabel="rn">rn</Text>
+      </ScrollableTabBarView>
+      <Text >{this.state.result}}</Text>
       </View>
   }
 }
