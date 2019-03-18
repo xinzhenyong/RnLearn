@@ -9,6 +9,7 @@ import Page4 from '../page/Page4';
 import Page5 from '../page/Page5';
 import Welcome from '../Welcome';
 import MainPage from '../MainPage';
+import CustomLabelPage from '../js/pages/CustomLabelPage';
 // export const AppStackNavigator=createStackNavigator({
 //     HomePage:{
 //         screen:HomePage
@@ -49,9 +50,21 @@ export const AppStackNavigator=createStackNavigator({
     },
     MainPage:{
         screen:MainPage,
-                navigationOptions:{title:'热门'}
+        navigationOptions: {
+            header: null
+        }
             
     },
+    CustomLabelPage:{
+        screen:CustomLabelPage,
+        navigationOptions: {
+            header: null
+        }
+    }
     
+}, {
+    navigationOptions: {
+        header: null
+    }
 })
 

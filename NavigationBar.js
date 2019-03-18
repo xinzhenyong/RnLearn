@@ -75,12 +75,12 @@ export default class NavigationBar extends Component {
 }
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'gray'
+        backgroundColor: '#2196f3'
     },
     navBar: {
         justifyContent: 'space-between', alignItems: 'center',
         height: Platform.OS === 'ios' ? NAV_BAR_HEIGHT_IOS : NAV_BAR_HEIGHT_ANDROID,
-        backgroundColor: 'blue', flexDirection: 'row'
+        backgroundColor: '#2196f3', flexDirection: 'row'
     },
     title: {
         fontSize: 20,
